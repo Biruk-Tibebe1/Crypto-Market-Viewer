@@ -1,0 +1,119 @@
+/* Bybit-like dark theme */
+/* Bybit-like dark theme (values inlined to avoid custom-property parsing issues) */
+.root, .scene {
+  -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #0b1320 0%, #071017 100%);
+  -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  -fx-text-fill: #e6eef3;
+}
+
+/* Panels and cards */
+.card, .pane, .list-view, .table-view, .text-area {
+  -fx-background-color: #0f1724; /* panel */
+  -fx-border-color: #20313d;
+  -fx-border-width: 1;
+  -fx-background-radius: 6;
+  -fx-border-radius: 6;
+}
+
+/* Top toolbar and controls */
+.top-bar, .hbox {
+  -fx-background-color: transparent;
+}
+
+.button, .toggle-button {
+  -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #ff8a22 0%, #ff7a00 100%);
+  -fx-text-fill: white;
+  -fx-background-radius: 6;
+  -fx-padding: 6 10 6 10;
+  -fx-font-weight: 600;
+}
+
+.button:hover, .toggle-button:hover { -fx-opacity: 0.95; }
+
+/* Popular cards */
+.card {
+  -fx-background-color: linear-gradient(#071017 0%, #0b1722 100%);
+  -fx-padding: 10;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 8, 0.3, 0, 2);
+}
+.card .symbol { -fx-text-fill: #cfe8ff; }
+.card .price { -fx-text-fill: #ffffff; }
+
+/* Console / debug area */
+.text-area {
+  -fx-control-inner-background: #041216;
+  -fx-text-fill: #cfe8ff;
+  -fx-background-color: #041216;
+  -fx-border-color: #0b1620;
+}
+
+.card .symbol { -fx-font-weight: 700; -fx-font-size: 13px; -fx-text-fill: #f1f6f9; }
+.card .price { -fx-font-size: 15px; -fx-font-weight: 700; -fx-text-fill: #ffffff; }
+.card .change { -fx-font-size: 12px; }
+.pos { -fx-text-fill: #16c784; }
+.neg { -fx-text-fill: #ff4d4f; }
+
+/* Buttons and accents */
+.button {
+  -fx-background-color: linear-gradient(from 0% 0% to 0% 100%, #ff8a22 0%, #ff7a00 100%);
+  -fx-text-fill: white;
+  -fx-background-radius: 6;
+}
+
+/* Charts */
+.price-chart .chart-plot-background { -fx-background-color: rgba(6,10,14,0.30); -fx-background-insets: 0; }
+.volume-chart .chart-plot-background { -fx-background-color: rgba(6,10,14,0.18); }
+.price-chart .chart-vertical-grid-lines, .price-chart .chart-horizontal-grid-lines {
+  -fx-stroke: rgba(255,255,255,0.06);
+  -fx-stroke-dash-array: 3 6;
+}
+
+/* Series colors: SMA and overlays */
+.price-chart .chart-series-line.sma3 { -fx-stroke: #ffb37a; -fx-stroke-width: 2; }
+.price-chart .chart-series-line.sma5 { -fx-stroke: #4bd6a6; -fx-stroke-width: 2; }
+
+/* Candle and wick styling (custom Candle nodes use these classes) */
+.candle-up > Rectangle { -fx-fill: #16c784; -fx-stroke: rgba(6,10,14,0.6); }
+.candle-down > Rectangle { -fx-fill: #ff4d4f; -fx-stroke: rgba(6,10,14,0.6); }
+.candle-wick { -fx-stroke: rgba(255,255,255,0.09); -fx-stroke-width: 1.2; }
+
+/* Volume bars */
+.volume-chart .chart-bar { -fx-bar-fill: rgba(255,122,0,0.92); -fx-bar-gap: 2; }
+
+/* Legend and axis tweaks */
+.chart-legend { -fx-background-color: transparent; -fx-border-color: transparent; }
+.price-chart .axis-label, .price-chart .tick-mark-label { -fx-fill: rgba(255,255,255,0.6); }
+.price-chart .axis-tick-mark { -fx-stroke: rgba(255,255,255,0.06); }
+
+/* ListView styling */
+.list-view {
+  -fx-control-inner-background: transparent;
+  -fx-background-color: transparent;
+}
+.list-view .list-cell {
+  -fx-background-color: transparent;
+  -fx-text-fill: #cfe8ff;
+}
+.list-view .list-cell:filled:selected, .list-view .list-cell:filled:selected:focused { -fx-background-color: rgba(255,122,0,0.12); }
+
+/* Order book and trades */
+.list-view .cell { -fx-background-color: transparent; -fx-text-fill: #e6eef3; }
+.bids .cell { -fx-text-fill: #16c784; }
+.asks .cell { -fx-text-fill: #ff4d4f; }
+
+/* Tooltip */
+.tooltip { -fx-background-color: rgba(6,10,14,0.95); -fx-text-fill: #e6eef3; -fx-background-radius: 6; }
+
+/* Minor UI tweaks */
+.status-label { -fx-text-fill: #9aa7b2; }
+.brand { -fx-text-fill: #ffffff; -fx-font-weight: 800; }
+/* Popular bar (dark override) */
+.popular-bar { -fx-background-color: linear-gradient(#071017, #0b1722); -fx-border-color: #20313d; -fx-border-width: 0 0 1 0; }
+
+/* Detail view (dark) */
+.detail-title { -fx-font-size: 18px; -fx-font-weight: 700; -fx-text-fill: #e6eef3; }
+.price-label { -fx-font-size: 16px; -fx-font-weight: 600; -fx-text-fill: #ffffff; }
+.center-message { -fx-font-size: 14px; -fx-text-fill: #9aa7b2; }
+.ext-info { -fx-text-fill: #cfe8ff; }
+
+/* Candle visuals are defined below already */
